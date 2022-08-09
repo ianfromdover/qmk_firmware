@@ -2,6 +2,14 @@
 Copyright 2019 @foostan
 Copyright 2020 Drashna Jaelre <@drashna>
 Copyright 2022 Ian Hong @ianfromdover
+
+Todo:
+Zero to pinkie home
+fn ten to same as zero
+mac start and end of line to cmd arrow left and right
+mac copy and paste (test windows copy and paste native works yet or not)
+mac and windows layers in the configurator copy paste edit after the above is done.
+update kmonad with the same changes and rename the files to just launch with iz command.
 */
 
 #include QMK_KEYBOARD_H
