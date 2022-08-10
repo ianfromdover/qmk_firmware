@@ -20,6 +20,8 @@ Layers:
 6, 13 oneshot
 */
 
+#define MACRO_DELAY 20
+
 enum custom_keycodes {
   SAFARI_M = SAFE_RANGE,
   NOTION_M,
@@ -133,49 +135,49 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case SAFARI_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "saf" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "saf" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
     case NOTION_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "not" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "not" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
     case TELEGR_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "tel" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "tel" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
     case TXTEDT_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "texted" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "text" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
     case TERMNL_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "term" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "ter" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
     case FIGMA_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "figma" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "fig" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
     case MUSIC_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "music" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "mus" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
     case MAIL_M:
       if (record -> event.pressed) {
-        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "mail" SS_DELAY(15) SS_TAP(X_ENTER));
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "mai" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
   }
