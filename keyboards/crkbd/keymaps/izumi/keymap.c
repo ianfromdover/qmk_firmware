@@ -2,13 +2,10 @@
 #include <stdio.h>
 
 /*
+Izumi Layout v5.5
 Copyright 2019 @foostan
 Copyright 2020 Drashna Jaelre <@drashna>
 Copyright 2022 Ian Hong @ianfromdover
-
-Todo:
-mac copy and paste (test windows copy and paste native works yet or not)
-update kmonad with the same changes and rename the files to just launch with iz command.
 
 Layers:
 0, 7 base clmk
@@ -49,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Mac
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- LT(5, KC_NO),    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,  KC_U,  KC_Y, KC_QUOT, LT(5, KC_NO),
+ LT(5, KC_NO),    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,  KC_U,   KC_Y,   KC_QUOT, LT(5, KC_NO),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TAB,     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,  KC_E,  KC_I, KC_O,    OSL(6),
+      KC_TAB,     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,  KC_E,   KC_I,   KC_O, OSL(6),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
   KC_CAPS, LCTL_T(KC_Z), LALT_T(KC_X), KC_C, KC_D,    KC_V,               KC_K, KC_H, KC_COMM, RALT_T(KC_DOT), RCTL_T(KC_SLSH), TG(4),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -62,9 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Win
   [7] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- LT(12, KC_NO),    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,  KC_U,  KC_Y, KC_QUOT, LT(12, KC_NO),
+ LT(12, KC_NO),    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,   KC_Y,   KC_QUOT, LT(12, KC_NO),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TAB,     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,  KC_E,  KC_I, KC_O,    OSL(13),
+      KC_TAB,     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                       KC_M,    KC_N,    KC_E,   KC_I,   KC_O,    OSL(13),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
   KC_CAPS, LGUI_T(KC_Z), LALT_T(KC_X), KC_C, KC_D,    KC_V,               KC_K, KC_H, KC_COMM, RALT_T(KC_DOT), RGUI_T(KC_SLSH), TG(11),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
