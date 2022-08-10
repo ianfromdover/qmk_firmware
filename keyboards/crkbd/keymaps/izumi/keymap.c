@@ -23,6 +23,7 @@ Layers:
 #define MACRO_DELAY 20
 
 enum custom_keycodes {
+  // Mac App Macros
   SAFARI_M = SAFE_RANGE,
   NOTION_M,
   TELEGR_M,
@@ -31,10 +32,6 @@ enum custom_keycodes {
   FIGMA_M,
   MUSIC_M,
   MAIL_M,
-  
-  SSFULL_M,
-  SSLASO_M,
-  EMOJI_M
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
