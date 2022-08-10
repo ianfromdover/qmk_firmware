@@ -7,13 +7,10 @@ Copyright 2020 Drashna Jaelre <@drashna>
 Copyright 2022 Ian Hong @ianfromdover
 
 Todo:
-Zero to pinkie home
-fn ten to same as zero
-mac start and end of line to cmd arrow left and right
 mac copy and paste (test windows copy and paste native works yet or not)
 update kmonad with the same changes and rename the files to just launch with iz command.
 
-layers
+Layers:
 0, 7 base clmk
 1, 8 nav
 2, 9 num
@@ -24,9 +21,7 @@ layers
 */
 
 enum custom_keycodes {
-  SEARCH_M = SAFE_RANGE, // spotlight on Mac. global search.
-  /*
-  SAFARI_M,
+  SAFARI_M = SAFE_RANGE,
   NOTION_M,
   TELEGR_M,
   TXTEDT_M,
@@ -38,7 +33,6 @@ enum custom_keycodes {
   SSFULL_M,
   SSLASO_M,
   EMOJI_M
-  */
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -58,11 +52,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // NAV Layer
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, LGUI(KC_GRV), LGUI(KC_TAB), LGUI(KC_LEFT), LGUI(KC_RGHT), KC_NO,          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-LGUI(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, LGUI(KC_RBRC),                  KC_NO,   KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, KC_NO, 
+   G(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, G(KC_RBRC),                     KC_NO,   KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, KC_NO, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-KC_NO, LGUI(KC_Z), LGUI(KC_X), LGUI(KC_C), LGUI(KC_V), KC_NO,                    KC_NO,   KC_WH_D, KC_WH_U, KC_NO,   KC_NO,   KC_NO, 
+      KC_NO, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), KC_NO,                          KC_NO,   KC_WH_D, KC_WH_U, KC_NO,   KC_NO,   KC_NO, 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_TAB,  KC_BSPC,  KC_ESC,     KC_NO,  KC_NO,   KC_NO
                                       //`--------------------------'  `--------------------------'
@@ -124,42 +118,66 @@ KC_NO, LGUI(KC_Z), LGUI(KC_X), LGUI(KC_C), LGUI(KC_V), KC_NO,                   
   // One-Shot Layer
   [6] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_NO,   KC_NO,   KC_NO, SGUI(KC_3), SGUI(KC_4), KC_NO,                    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+      KC_NO,   KC_NO,   KC_NO, SGUI(KC_3), SGUI(KC_4), KC_NO,                    KC_NO,  KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
- KC_NO,  KC_INT2, LCTL(KC_SPC), C(G(KC_SPC)), KC_CAPS, KC_NO,                 KC_NO, LGUI(KC_SPC), SEARCH_M,    KC_N,    KC_T,    LGUI(KC_TAB),
+      KC_NO,   DF(0),   DF(0), C(G(KC_SPC)), C(KC_SPC), KC_NO,                  KC_NO,  SAFARI_M, NOTION_M,TELEGR_M,TXTEDT_M,G(KC_TAB),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_NO,   CG_NORM, CG_SWAP, DF(1),   DF(0),   KC_NO,                        KC_NO,   KC_T,    KC_T,    KC_M,    KC_M,    KC_NO,
+      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_NO,  TERMNL_M, FIGMA_M, MUSIC_M, MAIL_M,  KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_NO,   KC_NO,   KC_NO,     KC_NO,    KC_NO,   KC_NO
+                                          KC_NO,   KC_NO,   KC_NO,       KC_NO,  G(KC_SPC), KC_NO
                                       //`--------------------------'  `--------------------------'
   ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case SEARCH_M:
+    case SAFARI_M:
       if (record -> event.pressed) {
-        // on press
-        SEND_STRING("bro");
-      } else {
-        // on release
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "saf" SS_DELAY(15) SS_TAP(X_ENTER));
       }
       return true;
 
-    /*
-    case SAFARI_M
-    case NOTION_M
-    case TELEGR_M
-    case TXTEDT_M
-    case TERMNL_M
-    case FIGMA_M
-    case MUSIC_M
-    case MAIL_M
-  
-    case SSFULL_M
-    case SSLASO_M
-    case EMOJI_M
-    */
+    case NOTION_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "not" SS_DELAY(15) SS_TAP(X_ENTER));
+      }
+      return true;
+
+    case TELEGR_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "tel" SS_DELAY(15) SS_TAP(X_ENTER));
+      }
+      return true;
+
+    case TXTEDT_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "texted" SS_DELAY(15) SS_TAP(X_ENTER));
+      }
+      return true;
+
+    case TERMNL_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "term" SS_DELAY(15) SS_TAP(X_ENTER));
+      }
+      return true;
+
+    case FIGMA_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "figma" SS_DELAY(15) SS_TAP(X_ENTER));
+      }
+      return true;
+
+    case MUSIC_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "music" SS_DELAY(15) SS_TAP(X_ENTER));
+      }
+      return true;
+
+    case MAIL_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(15) "mail" SS_DELAY(15) SS_TAP(X_ENTER));
+      }
+      return true;
   }
   return true;
 }
