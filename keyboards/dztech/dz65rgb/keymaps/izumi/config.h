@@ -7,6 +7,11 @@
 #ifdef RGB_MATRIX_ENABLE
 ian*/
 
+#define TAPPING_TERM 200
+#define ONESHOT_TIMEOUT 1500
+
+#define MOUSEKEY_MAX_SPEED 6
+
 /* Reset default from dz65rgb/v2 config.h */
 /*ian
 #	undef DISABLE_RGB_MATRIX_SPLASH

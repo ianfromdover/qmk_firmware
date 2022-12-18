@@ -43,7 +43,6 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ● ---------- CLMK Base Layers ---------- ●
-  // sometimes the wrx column doesn't work, idk why.
   // Mac
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
