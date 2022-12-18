@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ● ---------- Izumi Layer ---------- ●
     [0] = LAYOUT_65_ansi(
         QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, DF(1), 
-        LT(2,KC_TAB), KC_W, KC_L, KC_Y, KC_P, KC_K, KC_Z, KC_F, KC_O, KC_U, KC_QUOT, KC_LBRC, KC_RBRC, OSL(7), KC_DEL,
+        LT(2,KC_TAB), KC_W, KC_L, KC_Y, KC_P, KC_K, KC_Z, KC_F, KC_O, KC_U, KC_QUOT, KC_LBRC, KC_RBRC, OSL(7), A(KC_BSPC),
         LT(3,KC_CAPS), KC_C, KC_R, KC_S, KC_T, KC_G, KC_M, KC_N, KC_E, KC_I, KC_A, LT(4,KC_SCLN), KC_ENT, G(KC_TAB), 
         OSM(MOD_LSFT), KC_J, KC_V, KC_D, KC_B, KC_Q, KC_X, KC_H, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT), KC_UP, G(KC_GRV),
         // karabiner makes sticky shift malfunction
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ● ---------- QWERTY Layer ---------- ●
     [1] = LAYOUT_65_ansi(
         QK_GESC,        KC_1,    KC_2,     KC_3,    KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,    KC_EQL,     KC_BSPC, DF(0), 
-        KC_TAB,         KC_Q,    KC_W,     KC_E,    KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,    KC_RBRC,    KC_BSLS, KC_DEL, 
+        KC_TAB,         KC_Q,    KC_W,     KC_E,    KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,    KC_RBRC,    KC_BSLS, A(KC_BSPC),
         KC_CAPS,        KC_A,    KC_S,     KC_D,    KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,                KC_ENT,  G(KC_TAB), 
         KC_LSFT,                 KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,    KC_DOT,     KC_SLSH, KC_RSFT, KC_UP, G(KC_GRV), 
         KC_LCTL,    KC_LALT, KC_LGUI,                               KC_SPC,                 KC_RGUI, KC_RALT, LT(5,KC_GRV), KC_LEFT, KC_DOWN, KC_RGHT
@@ -106,10 +106,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // ● ---------- System, Function Layer ---------- ●
     [5] = LAYOUT_65_ansi(
-        QK_BOOT, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, XXXXXXX, XXXXXXX, 
+        QK_BOOT, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_DEL, XXXXXXX, 
         EE_CLR, RGB_VAD, KC_BRID, KC_BRIU, RGB_VAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_TOG, 
         KC_MUTE, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_MOD, 
-        C(KC_SPC), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_SAI, RGB_RMOD, 
+        C(KC_SPC), XXXXXXX, RGB_SPI, RGB_SPD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_SAI, RGB_RMOD,
         CG_NORM, CG_SWAP, XXXXXXX,                   KC_MPLY,           XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUD, RGB_SAD, RGB_HUI
     ),
 
