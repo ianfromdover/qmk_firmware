@@ -6,6 +6,8 @@
  * generated from json file
  * media stop == need to manually edit
  *
+ * Note: karabiner makes sticky shift malfunction
+ *
  * Layers:
  * 0 qwerty
  * 1 canary, main
@@ -59,20 +61,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ● ---------- Izumi Layer ---------- ●
     [0] = LAYOUT_65_ansi(
         QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, DF(1), 
-        LT(2,KC_TAB), KC_W, KC_L, KC_Y, KC_P, KC_K, KC_Z, KC_F, KC_O, KC_U, KC_QUOT, KC_LBRC, KC_RBRC, OSL(7), A(KC_BSPC),
-        LT(3,KC_CAPS), KC_C, KC_R, KC_S, KC_T, KC_G, KC_M, KC_N, KC_E, KC_I, KC_A, LT(4,KC_SCLN), KC_ENT, G(KC_TAB), 
+        LT(2,KC_TAB), KC_W, KC_L, KC_Y, KC_P, KC_K, KC_Z, KC_F, KC_O, KC_U, KC_QUOT, KC_LBRC, KC_RBRC, A(KC_BSPC), KC_DEL,
+        LT(3,KC_CAPS), KC_C, KC_R, KC_S, KC_T, KC_G, KC_M, KC_N, KC_E, KC_I, KC_A, KC_SCLN, LT(4,KC_ENT), G(KC_TAB), 
         OSM(MOD_LSFT), KC_J, KC_V, KC_D, KC_B, KC_Q, KC_X, KC_H, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT), KC_UP, G(KC_GRV),
-        // karabiner makes sticky shift malfunction
-        LM(1, MOD_LCTL), KC_LALT, LM(1, MOD_LGUI),              KC_SPC, LM(1, MOD_LGUI), TG(6), LT(5,KC_GRV), KC_LEFT, KC_DOWN, KC_RGHT
+        LM(1, MOD_LCTL), KC_LALT, LM(1, MOD_LGUI),              KC_SPC,         LT(7,LM(1, MOD_LGUI)), LT(5,KC_GRV), TG(6), KC_LEFT, KC_DOWN, KC_RGHT
     ),
 
     // ● ---------- QWERTY Layer ---------- ●
     [1] = LAYOUT_65_ansi(
         QK_GESC,        KC_1,    KC_2,     KC_3,    KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,    KC_EQL,     KC_BSPC, DF(0), 
-        KC_TAB,         KC_Q,    KC_W,     KC_E,    KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,    KC_RBRC,    KC_BSLS, A(KC_BSPC),
+        KC_TAB,         KC_Q,    KC_W,     KC_E,    KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,    KC_RBRC,    KC_BSLS, KC_DEL,
         KC_CAPS,        KC_A,    KC_S,     KC_D,    KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,                KC_ENT,  G(KC_TAB), 
         KC_LSFT,                 KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,    KC_DOT,     KC_SLSH, KC_RSFT, KC_UP, G(KC_GRV), 
-        KC_LCTL,    KC_LALT, KC_LGUI,                               KC_SPC,                 KC_RGUI, KC_RALT, LT(5,KC_GRV), KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL,    KC_LALT, KC_LGUI,                               KC_SPC,                 KC_RGUI, LT(5,KC_GRV), KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT
     ),
 
 
@@ -80,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [2] = LAYOUT_65_ansi(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
         _______, _______, _______, _______, _______, _______, KC_DLR, KC_7, KC_8, KC_9, KC_SLSH, _______, _______, _______, _______, 
-        _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______, KC_PLUS, KC_4, KC_5, KC_6, KC_EQL, _______, _______, _______, 
+        _______, KC_LCTL, KC_LGUI, KC_LSFT, _______, _______, KC_PLUS, KC_4, KC_5, KC_6, KC_EQL, _______, _______, _______, 
         _______, _______, _______, _______, _______, _______, KC_MINS, KC_1, KC_2, KC_3, KC_DOT, _______, _______, _______, 
         _______, _______, _______,                            _______, KC_0, _______, _______, _______, _______, _______
     ),
@@ -89,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [3] = LAYOUT_65_ansi(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
         _______, _______, _______, _______, _______, _______, KC_GRV, KC_LT, KC_LBRC, KC_RBRC, KC_GT, _______, _______, _______, _______, 
-        _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______, KC_PLUS, KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, _______, _______, _______, 
+        _______, KC_LCTL, KC_LGUI, KC_LSFT, _______, _______, KC_PLUS, KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, _______, _______, _______, 
         _______, _______, _______, _______, _______, _______, KC_UNDS, KC_DQUO, KC_AMPR, KC_PIPE, KC_BSLS, _______, _______, _______, 
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
@@ -98,10 +99,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [4] = LAYOUT_65_ansi(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
         _______, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-        G(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, G(KC_RBRC), _______, KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, _______, _______, _______, 
-        _______, KC_UNDO, KC_CUT, KC_COPY, KC_PSTE, _______, _______, KC_WH_D, KC_WH_U, _______, _______, _______, _______, _______, 
+        G(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, G(KC_RBRC), _______, _______, _______, KC_RSFT, KC_RGUI, KC_RALT, _______, _______, 
+        _______, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), _______, _______, _______, _______, KC_WH_D, KC_WH_U, _______, _______, _______, 
         // these keycodes dont work: undo cut copy paste, and browser
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+        _______, _______, _______, _______, KC_RCTL, _______, _______, _______, _______, _______
     ),
 
     // ● ---------- System, Function Layer ---------- ●
@@ -125,8 +126,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ● ---------- One Shot Layer ---------- ●
     [7] = LAYOUT_65_ansi(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, FIGMA_M, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX,
-        KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SAFARI_M, TELE_M, NOTION_M, TXTEDT_M, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, FIGMA_M, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SAFARI_M, TELE_M, NOTION_M, TXTEDT_M, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TERMNL_M, MUSIC_M, SPTFY_M, MAIL_M, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX,                            G(KC_SPC), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     )
