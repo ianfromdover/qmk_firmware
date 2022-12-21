@@ -13,7 +13,7 @@ ian*/
 #define MOUSEKEY_MAX_SPEED 6
 
 // USK Polling Rate to 1000hz
-#define USB_POLLING_INTERVAL_MS 2
+#define USB_POLLING_INTERVAL_MS 1
 
 /* Reset default from dz65rgb/v2 config.h */
 /*ian
