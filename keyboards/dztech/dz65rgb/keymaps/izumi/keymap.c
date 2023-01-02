@@ -4,13 +4,12 @@
  * 18 Dec 2022 6.36pm
  * Copyright 2022 Ian Hong @ianfromdover
  * generated from json file
- * media stop == need to manually edit
  *
  * Note: karabiner makes sticky shift malfunction
  *
  * Layers:
- * 0 qwerty
- * 1 canary, main
+ * 0 canary, main
+ * 1 qwerty
  * 2 num
  * 3 code
  * 4 nav
@@ -234,6 +233,111 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
 
     }
+  return true;
+}
+
+bool rgb_matrix_indicators_user(void) {
+  // CAPS: change caps and takodachi to white
+  if (host_keyboard_led_state().caps_lock) {
+    rgb_matrix_set_color(30, 0xFF, 0xFF, 0xFF);
+    rgb_matrix_set_color(14, 0xFF, 0xFF, 0xFF); // change takodachi to white
+  }
+
+  /**
+   * Layers:
+   * 0 canary, main
+   * 1 qwerty
+   * 2 num
+   * 3 code
+   * 4 nav
+   * 5 system, functions
+   * 6 mouse
+   * 7 one shot
+   */
+  switch(get_highest_layer(layer_state | default_layer_state)) {
+    case 1: // qwerty is grey
+      rgb_matrix_set_color_all(0x80, 0x80, 0x80);
+      break;
+
+    case 2: // num is purple
+      rgb_matrix_set_color_all(0x00, 0x00, 0x00); // turn all else off
+      // 14 to col too
+      rgb_matrix_set_color_all(0xDD, 0x00, 0xFF); // temp col selection
+
+      // modifiers to white
+      rgb_matrix_set_color(32, 0xFF, 0xFF, 0xFF); // ctl
+      rgb_matrix_set_color(33, 0xFF, 0xFF, 0xFF); // cmd
+      rgb_matrix_set_color(34, 0xFF, 0xFF, 0xFF); // sft
+
+                                                  // 21-25
+                                                  // 36-40
+                                                  // 51-55
+                                                  // 62
+      break;
+
+    case 3: // code is pink
+      rgb_matrix_set_color_all(0x00, 0x00, 0x00); // turn all else off
+      rgb_matrix_set_color_all(0xEE, 0x80, 0xFF);
+
+      // modifiers to white
+      rgb_matrix_set_color(32, 0xFF, 0xFF, 0xFF); // ctl
+      rgb_matrix_set_color(33, 0xFF, 0xFF, 0xFF); // cmd
+      rgb_matrix_set_color(34, 0xFF, 0xFF, 0xFF); // sft
+      
+      // same as num but no 62
+      break;
+
+    case 4: // nav is orange
+      rgb_matrix_set_color_all(0x00, 0x00, 0x00); // turn all else off
+      rgb_matrix_set_color_all(0xFF, 0x80, 0x40);
+
+      // modifiers to white
+      rgb_matrix_set_color(62, 0xFF, 0xFF, 0xFF); // ctl
+      rgb_matrix_set_color(24, 0xFF, 0xFF, 0xFF); // cmd
+      rgb_matrix_set_color(25, 0xFF, 0xFF, 0xFF); // opt
+      rgb_matrix_set_color(37, 0xFF, 0xFF, 0xFF); // sft
+
+      // wheel up down orange 39 40
+      // 31 to 34 arrows, 18, 19 max
+      // copy paste 45 to 48
+      break;
+
+    case 5: // system is lime green
+      rgb_matrix_set_color_all(0x55, 0x80, 0x40);
+      break;
+
+    case 6: // mouse is azure blue
+      rgb_matrix_set_color_all(0x00, 0x00, 0x00); // turn all else off
+      rgb_matrix_set_color(14, 0x6D, 0xA4, 0xBE);
+
+      // arrow keys
+      rgb_matrix_set_color(23, 0x6D, 0xA4, 0xBE);
+      rgb_matrix_set_color(37, 0x6D, 0xA4, 0xBE);
+      rgb_matrix_set_color(38, 0x6D, 0xA4, 0xBE);
+      rgb_matrix_set_color(39, 0x6D, 0xA4, 0xBE);
+      break;
+
+    case 7: // oneshot is emerald green
+      rgb_matrix_set_color_all(0x00, 0x00, 0x00); // turn all else off
+      rgb_matrix_set_color(14, 0x00, 0x80, 0x00); // tako
+
+      rgb_matrix_set_color(13, 0x00, 0x80, 0x00); // cmd bspc
+      rgb_matrix_set_color(61, 0x00, 0x80, 0x00); // spotlight
+
+      rgb_matrix_set_color(23, 0x00, 0x80, 0x00); // figma
+      rgb_matrix_set_color(37, 0x00, 0x80, 0x00); // saf
+      rgb_matrix_set_color(38, 0x00, 0x80, 0x00); // tele
+      rgb_matrix_set_color(39, 0x00, 0x80, 0x00); // notion
+      rgb_matrix_set_color(40, 0x00, 0x80, 0x00); // textedit
+      rgb_matrix_set_color(51, 0x00, 0x80, 0x00); // terminal
+      rgb_matrix_set_color(52, 0x00, 0x80, 0x00); // music
+      rgb_matrix_set_color(53, 0x00, 0x80, 0x00); // spotify
+      rgb_matrix_set_color(54, 0x00, 0x80, 0x00); // mail
+      break;
+
+    default: // on Canary layer, do matrix effect
+      break;
+  }
   return true;
 }
 
