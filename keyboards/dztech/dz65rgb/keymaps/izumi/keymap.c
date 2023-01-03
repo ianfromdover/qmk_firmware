@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             LT(2,KC_TAB),     KC_W,    KC_L,    KC_Y,   KC_P,     KC_K,    KC_Z,    KC_F,    KC_O,    KC_U,    KC_QUOT, KC_LBRC, KC_RBRC, A(KC_BSPC), KC_DEL,
             LT(3,KC_CAPS),    KC_C,    KC_R,    KC_S,   KC_T,     KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_A,    KC_SCLN, LT(4,KC_ENT),     G(KC_TAB), 
             OSM(MOD_LSFT),    KC_J,    KC_V,    KC_D,   KC_B,     KC_Q,    KC_X,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, OSM(MOD_RSFT),    KC_UP,   G(KC_GRV),
-            LM(1,MOD_LCTL),   KC_LALT, LM(1,MOD_LGUI),            KC_SPC,           LT(7,KC_BSLS),    LT(5,KC_GRV),     TG(6),   KC_LEFT, KC_DOWN, KC_RGHT
+            LM(1,MOD_LCTL),   LM(1,MOD_LALT), LM(1,MOD_LGUI),     KC_SPC,           LT(7,KC_BSLS),    LT(5,KC_GRV),     TG(6),   KC_LEFT, KC_DOWN, KC_RGHT
             ),
 
     // ● ---------- QWERTY Layer ---------- ●
@@ -112,8 +112,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // ● ---------- One Shot Layer ---------- ●
     [7] = LAYOUT_65_ansi(
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, G(KC_BSPC), XXXXXXX, 
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, FIGMA_M, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, G(KC_MINS), G(KC_EQL), G(KC_BSPC), XXXXXXX, 
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, FIGMA_M, XXXXXXX, XXXXXXX, G(KC_LBRC), G(KC_RBRC), XXXXXXX, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SAFARI_M, TELE_M, NOTION_M, TXTEDT_M, XXXXXXX,        XXXXXXX, XXXXXXX,
             XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TRMNL_M, MUSIC_M, SPTFY_M, MAIL_M,  XXXXXXX, XXXXXXX, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX,                   G(KC_SPC),                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
@@ -370,6 +370,8 @@ bool rgb_matrix_indicators_user(void) {
                     rgb_matrix_set_color(lights[i], colour[0], colour[1], colour[2]);
                 }
             }
+            rgb_matrix_set_color(50, 0xDF, 0x50, 0x00); // L, R mouse btns orange
+            rgb_matrix_set_color(51, 0xDF, 0x50, 0x00);
             break;
 
         case 7: // oneshot is emerald green
