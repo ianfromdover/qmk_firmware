@@ -1,9 +1,8 @@
 #include QMK_KEYBOARD_H
 
 /* Izumi68 Layout v1.0
- * 18 Dec 2022 6.36pm
+ * 15 Feb 2022 6pm
  * Copyright 2022 Ian Hong @ianfromdover
- * generated from json file
  *
  * Note: karabiner makes sticky shift malfunction
  *
@@ -31,6 +30,8 @@ enum custom_keycodes {
     MUSIC_M,
     SPTFY_M,
     MAIL_M,
+    MIRO_M,
+    WAPP_M,
 
     // Win Macros
     CHROME_W,
@@ -41,7 +42,9 @@ enum custom_keycodes {
     FIGMA_W,
     MUSIC_W,
     SPTFY_W,
-    MAIL_W
+    MAIL_W,
+    MIRO_W,
+    WAPP_W
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -113,9 +116,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ● ---------- One Shot Layer ---------- ●
     [7] = LAYOUT_65_ansi(
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, G(KC_MINS), G(KC_EQL), G(KC_BSPC), XXXXXXX, 
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, FIGMA_M, XXXXXXX, XXXXXXX, G(KC_LBRC), G(KC_RBRC), XXXXXXX, XXXXXXX,
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SPTFY_M, FIGMA_M, MIRO_M,  XXXXXXX, G(KC_LBRC), G(KC_RBRC), XXXXXXX, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SAFARI_M, TELE_M, NOTION_M, TXTEDT_M, XXXXXXX,        XXXXXXX, XXXXXXX,
-            XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TRMNL_M, MUSIC_M, SPTFY_M, MAIL_M,  XXXXXXX, XXXXXXX, XXXXXXX,
+            XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TRMNL_M, MUSIC_M, WAPP_M, MAIL_M,  XXXXXXX, XXXXXXX, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX,                   G(KC_SPC),                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
             )
 };
@@ -177,6 +180,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
 
+        case MIRO_M:
+            if (record -> event.pressed) {
+                SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "miro" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+            }
+            return true;
+
+        case WAPP_M:
+            if (record -> event.pressed) {
+                SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "what" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+            }
+            return true;
+
             // ● ---------- Windows Macros ---------- ●
         case CHROME_W:
             if (record -> event.pressed) {
@@ -231,6 +246,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_TAP(X_LEFT_GUI) SS_DELAY(MACRO_DELAY) "outlook" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
             }
             return true;
+        case MIRO_W:
+            if (record -> event.pressed) {
+                SEND_STRING(SS_TAP(X_LEFT_GUI) SS_DELAY(MACRO_DELAY) "miro" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+            }
+            return true;
+
+        case WAPP_W:
+            if (record -> event.pressed) {
+                SEND_STRING(SS_TAP(X_LEFT_GUI) SS_DELAY(MACRO_DELAY) "what" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+            }
+            return true;
+
 
     }
     return true;
@@ -383,7 +410,7 @@ bool rgb_matrix_indicators_user(void) {
                 int lights[] = {
                     14,
                     13, 61,
-                    23,
+                    22, 23, 24,
                     37, 38, 39, 40,
                     51, 52, 53, 54,
                 };
