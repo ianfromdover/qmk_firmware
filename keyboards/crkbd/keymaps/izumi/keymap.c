@@ -5,7 +5,7 @@
 Izumi Layout v5.8
 Copyright 2019 @foostan
 Copyright 2020 Drashna Jaelre <@drashna>
-Copyright 2022 Ian Hong @ianfromdover
+Copyright 2023 Ian Hong @ianfromdover
 
 Layers:
 0, 7 base clmk
@@ -58,7 +58,7 @@ LALT_T(KC_TAB),  KC_C,   KC_R,    KC_S,    KC_T,    KC_G,                       
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 LCTL_T(KC_CAPS), KC_Q,   KC_J,    KC_V,    KC_D,    KC_W,                         KC_B,    KC_H,  KC_COMM, KC_DOT,  KC_SLSH, TG(4),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                       OSM(MOD_LSFT), LT(2, KC_BSPC), LT(3, KC_ESC),     KC_ENT, LT(1, KC_SPC), RGUI_T(KC_DEL)
+                       OSM(MOD_LSFT), LT(2, KC_BSPC), LT(3, KC_ESC),     LT(6, KC_ENT), LT(1, KC_SPC), RGUI_T(KC_DEL)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -71,10 +71,22 @@ LALT_T(KC_TAB),  KC_C,   KC_R,    KC_S,    KC_T,    KC_G,                       
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 LGUI_T(KC_CAPS), KC_Q,   KC_J,    KC_V,    KC_D,    KC_W,                         KC_B,    KC_H,   KC_COMM, KC_DOT, KC_SLSH, TG(11),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                       OSM(MOD_LSFT), LT(9, KC_BSPC), LT(10, KC_ESC),     KC_ENT, LT(8, KC_SPC), RCTL_T(KC_DEL)
+                       OSM(MOD_LSFT), LT(9, KC_BSPC), LT(10, KC_ESC),     LT(13, KC_ENT), LT(8, KC_SPC), RCTL_T(KC_DEL)
                                       //`--------------------------'  `--------------------------'
   ),
 
+  // ● ---------- QWERTY Layer ---------- ●
+  [14] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+LT(5, KC_NO),    KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_I,    KC_O,    KC_P, LT(5, KC_NO),
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+LALT_T(KC_TAB),  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,  KC_K,    KC_L,    KC_QUOT,    OSL(6),
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+LCTL_T(KC_CAPS), KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_SLSH, TG(14),
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                       OSM(MOD_LSFT), LT(2, KC_BSPC), LT(3, KC_ESC),           KC_ENT, KC_SPC, KC_RGUI
+                                      //`--------------------------'  `--------------------------'
+  ),
   // ● ---------- NAV Layers ---------- ●
   // Mac
   [1] = LAYOUT_split_3x6_3(
