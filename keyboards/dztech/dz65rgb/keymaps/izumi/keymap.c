@@ -32,6 +32,7 @@ enum custom_keycodes {
     MAIL_M,
     MIRO_M,
     WAPP_M,
+    FNDR_M,
 
     // Win Macros
     CHROME_W,
@@ -44,7 +45,8 @@ enum custom_keycodes {
     SPTFY_W,
     MAIL_W,
     MIRO_W,
-    WAPP_W
+    WAPP_W,
+    FXPL_W
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -52,9 +54,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_65_ansi(
             QK_GESC,          KC_1,    KC_2,    KC_3,   KC_4,     KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,    DF(1), 
             LT(2,KC_TAB),     KC_X,    KC_L,    KC_Y,   KC_P,     KC_K,    KC_Z,    KC_F,    KC_O,    KC_U,    KC_QUOT, KC_LBRC, KC_RBRC, A(KC_BSPC), KC_DEL,
-            LT(3,KC_CAPS),    KC_C,    KC_R,    KC_S,   KC_T,     KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_A,    KC_SCLN, LT(4,KC_ENT),     G(KC_TAB), 
+            LT(3,KC_CAPS),    KC_C,    KC_R,    KC_S,   KC_T,     KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_A,    KC_SCLN, KC_ENT,           G(KC_TAB), 
             OSM(MOD_LSFT),    KC_J,    KC_V,    KC_D,   KC_W,     KC_Q,    KC_B,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, OSM(MOD_RSFT),    KC_UP,   G(KC_GRV),
-            LM(1,MOD_LCTL),   LM(1,MOD_LALT), LM(1,MOD_LGUI),     KC_SPC,           LT(7,KC_BSLS),    LT(5,KC_GRV),     TG(6),   KC_LEFT, KC_DOWN, KC_RGHT
+            LM(1,MOD_LCTL),   LM(1,MOD_LALT), LM(1,MOD_LGUI),     LT(4,KC_SPC),     LT(7,KC_BSLS),    LT(5,KC_GRV),     TG(6),   KC_LEFT, KC_DOWN, KC_RGHT
             ),
 
     // ● ---------- QWERTY Layer ---------- ●
@@ -71,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [2] = LAYOUT_65_ansi(
             _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
             _______, _______, _______, _______, _______, _______, KC_DLR,  KC_7,    KC_8,    KC_9,    KC_SLSH, _______, _______, _______, _______, 
-            _______, _______, KC_LCTL, KC_LGUI, KC_LSFT, _______, KC_PLUS, KC_4,    KC_5,    KC_6,    KC_EQL,  _______,          _______, _______, 
+            _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______, KC_PLUS, KC_4,    KC_5,    KC_6,    KC_EQL,  _______,          _______, _______, 
             _______,          _______, _______, _______, _______, _______, KC_MINS, KC_1,    KC_2,    KC_3,    KC_DOT,  _______, _______, _______, 
             _______, _______, _______,                   _______,                            KC_0,    _______, _______, _______, _______, _______
             ),
@@ -80,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [3] = LAYOUT_65_ansi(
             _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
             _______, _______, _______, _______, _______, _______, KC_GRV,  KC_LT,   KC_LBRC, KC_RBRC, KC_GT,   _______, _______, _______, _______, 
-            _______, _______, KC_LCTL, KC_LGUI, KC_LSFT, _______, KC_PLUS, KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, _______,          _______, _______, 
+            _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______, KC_PLUS, KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, _______,          _______, _______, 
             _______,          _______, _______, _______, _______, _______, KC_UNDS, KC_DQUO, KC_AMPR, KC_PIPE, KC_BSLS, _______, _______, _______, 
             _______, _______, _______,                   _______,                            _______, _______, _______, _______, _______, _______
             ),
@@ -88,10 +90,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ● ---------- Navigation Layer ---------- ●
     [4] = LAYOUT_65_ansi(
             _______, _______, _______, _______,     _______,    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-            _______, _______, _______, G(KC_LEFT),  G(KC_RGHT), _______, _______, _______, _______, KC_RGUI, KC_RALT, _______, _______, _______, _______, 
-            _______, KC_LEFT, KC_DOWN, KC_UP,       KC_RGHT,    _______, _______, KC_RSFT, _______, KC_WH_D, KC_WH_U, _______,          _______, _______, 
-            _______,          G(KC_Z), G(KC_X),     G(KC_C),    G(KC_V), _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-            _______, _______, _______,                          _______,                            KC_RCTL, _______, _______, _______, _______, _______
+            _______, KC_HOME, KC_END, G(KC_LEFT),  G(KC_RGHT),  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
+            _______, KC_LEFT, KC_DOWN, KC_UP,       KC_RGHT,    _______, _______, KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, _______,          _______, _______, 
+            _______,          G(KC_Z), G(KC_X),     G(KC_C),    G(KC_V), _______, _______, KC_WH_D, KC_WH_U, _______, _______, _______, _______, _______, 
+            _______, _______, _______,                          XXXXXXX,                            _______, _______, _______, _______, _______, _______
             // these qmk keycodes dont work: undo, cut, copy, paste, browser
             ),
 
@@ -113,12 +115,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______, _______, _______,                   _______,                            _______, _______, _______, _______, _______, _______
             ),
 
-    // ● ---------- One Shot Layer ---------- ●
+    // ● ---------- One-Shot Layer ---------- ●
     [7] = LAYOUT_65_ansi(
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, G(KC_MINS), G(KC_EQL), G(KC_BSPC), XXXXXXX, 
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SPTFY_M, FIGMA_M, MIRO_M,  XXXXXXX, G(KC_LBRC), G(KC_RBRC), XXXXXXX, XXXXXXX,
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SAFARI_M, TELE_M, NOTION_M, TXTEDT_M, XXXXXXX,        XXXXXXX, XXXXXXX,
-            XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TRMNL_M, MUSIC_M, WAPP_M, MAIL_M,  XXXXXXX, XXXXXXX, XXXXXXX,
+            XXXXXXX, C(S(KC_S)),MIRO_W,FIGMA_W, SPTFY_W, XXXXXXX, C(S(KC_SCLN)),SPTFY_M,FIGMA_M,MIRO_M,XXXXXXX,G(KC_LBRC), G(KC_RBRC),XXXXXXX, XXXXXXX,
+            G(KC_DOT),NOTEPD_W,NOTION_W,TELE_W, CHROME_W,FXPL_W,  FNDR_M, SAFARI_M, TELE_M,  NOTION_M,TXTEDT_M,C(G(KC_SPC)),          XXXXXXX, XXXXXXX,
+            XXXXXXX,           MAIL_W, WAPP_W,  MUSIC_W, PSHELL_W,G(KC_SPC),XXXXXXX,TRMNL_M, MUSIC_M, WAPP_M,  MAIL_M,  XXXXXXX, XXXXXXX, XXXXXXX,
             XXXXXXX, XXXXXXX, XXXXXXX,                   G(KC_SPC),                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
             )
 };
@@ -192,6 +194,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
 
+        case FNDR_M:
+            if (record -> event.pressed) {
+                SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "finde" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+            }
+            return true;
+
             // ● ---------- Windows Macros ---------- ●
         case CHROME_W:
             if (record -> event.pressed) {
@@ -255,6 +263,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case WAPP_W:
             if (record -> event.pressed) {
                 SEND_STRING(SS_TAP(X_LEFT_GUI) SS_DELAY(MACRO_DELAY) "what" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+            }
+            return true;
+
+        case FXPL_W:
+            if (record -> event.pressed) {
+                SEND_STRING(SS_TAP(X_LEFT_GUI) SS_DELAY(MACRO_DELAY) "fil" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
             }
             return true;
 
@@ -343,9 +357,9 @@ bool rgb_matrix_indicators_user(void) {
             {
                 int colour[] = {0xDF, 0x50, 0x00};
                 int lights[] = {
-                    14, 18, 19,                 // home, end
-                    31, 32, 33, 34, 39, 40, // arrows, wheels
-                    45, 46, 47, 48          // undo, cut, copy, paste
+                    14, 16, 17, 18, 19,      // home, end
+                    31, 32, 33, 34,          // arrows
+                    45, 46, 47, 48, 51, 52   // undo, cut, copy, paste, wheels
                 };
                 int lightsSize = sizeof(lights) / sizeof(lights[0]);
 
@@ -355,10 +369,10 @@ bool rgb_matrix_indicators_user(void) {
             }
 
             // modifiers to white
-            rgb_matrix_set_color(62, 0xFF, 0xFF, 0xFF); // ctl
-            rgb_matrix_set_color(24, 0xFF, 0xFF, 0xFF); // cmd
-            rgb_matrix_set_color(25, 0xFF, 0xFF, 0xFF); // opt
             rgb_matrix_set_color(37, 0xFF, 0xFF, 0xFF); // sft
+            rgb_matrix_set_color(38, 0xFF, 0xFF, 0xFF); // cmd
+            rgb_matrix_set_color(39, 0xFF, 0xFF, 0xFF); // opt
+            rgb_matrix_set_color(40, 0xFF, 0xFF, 0xFF); // ctl
             break;
 
         case 5: // system is lime green

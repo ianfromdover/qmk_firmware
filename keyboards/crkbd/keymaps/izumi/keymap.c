@@ -33,6 +33,7 @@ enum custom_keycodes {
   SPTFY_M,
   MIRO_M,
   WAPP_M,
+  FNDR_M,
 
   // Win App Macros
   CHROME_W,
@@ -45,7 +46,8 @@ enum custom_keycodes {
   MAIL_W,
   SPTFY_W,
   MIRO_W,
-  WAPP_W
+  WAPP_W,
+  FXPL_W
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -108,7 +110,7 @@ LCTL_T(KC_CAPS), KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,                       
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                      KC_NO,   TG(6),G(KC_MINS), G(KC_EQL), G(KC_BSPC),KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-   G(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, G(KC_RBRC),                     KC_NO,   KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, KC_NO, 
+   G(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, G(KC_RBRC),                     KC_NO,   KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, G(KC_ENT), 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_NO,   G(KC_Z), G(KC_X), G(KC_C), G(KC_V), KC_NO,                        KC_NO,   KC_WH_D, KC_WH_U, G(KC_LBRC), G(KC_RBRC), KC_NO, 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -116,27 +118,27 @@ KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                     
                                       //`--------------------------'  `--------------------------'
   ),
 
-  // ● ---------- System and Function Layer ---------- ●
+  // ● ---------- System Layer ---------- ●
   [5] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_NO,   KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                        KC_NO,   KC_F7,   KC_F8,   KC_F9,   KC_F11,   KC_NO,
+      KC_NO,   KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,               KC_NO,C(A(KC_U)), C(A(KC_I)), C(A(KC_O)), C(A(KC_P)),KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      CG_SWAP,   KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_NO,                      KC_NO,   KC_F4,   KC_F5,   KC_F6,   KC_F10,   KC_NO, 
+      CG_SWAP,   KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_NO,             C(A(KC_H)),C(A(KC_J)),C(A(KC_K)),C(A(KC_L)),C(A(KC_SCLN)),KC_F1, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      CG_NORM,   BL_DEC,  KC_BRID, KC_BRIU, BL_INC,  KC_NO,                      KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F12,   KC_NO,
+      CG_NORM,   BL_DEC,  KC_BRID, KC_BRIU, BL_INC,  KC_NO,             KC_F4,C(A(KC_M)),C(A(KC_COMM)),C(A(KC_DOT)),C(A(KC_SLSH)),KC_F5,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_MUTE, KC_MPLY, KC_MSTP,     KC_NO,  KC_NO,   KC_NO
+                                          KC_MUTE, KC_MPLY, KC_MSTP, C(A(G(KC_ENT))),C(A(KC_ENT)),KC_F2
                                       //`--------------------------'  `--------------------------'
   ),
 
   // ● ---------- FPS Layer ---------- ●
   [6] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_3,    KC_WH_D, KC_MS_U, KC_WH_U, KC_6,    KC_7, 
+      KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        TG(6),   KC_WH_D, KC_MS_U, KC_WH_U, KC_5,    KC_6, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LALT,  KC_A,    KC_S,    KC_D,    KC_F,    KC_1,                        KC_4,    KC_MS_L, KC_MS_D, KC_MS_R, KC_8,    KC_9, 
+      KC_LALT,  KC_A,    KC_S,    KC_D,    KC_F,    KC_1,                        KC_3,    KC_MS_L, KC_MS_D, KC_MS_R, KC_7,    KC_8, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_2,                        KC_5,    KC_WH_L, KC_BTN3, KC_WH_R, KC_0,    TG(6),
+      KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_2,                        KC_4,    KC_WH_L, KC_BTN3, KC_WH_R, KC_9,    KC_0,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LCTL, KC_SPC, KC_LGUI,     KC_ENT,  KC_BTN1, KC_BTN2
                                       //`--------------------------'  `--------------------------'
@@ -145,11 +147,11 @@ KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                     
   // ● ---------- One-Shot Layer ---------- ●
   [7] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_NO,   KC_NO,   MIRO_W,  FIGMA_W, SPTFY_W, G(KC_LSFT),                     C(KC_SPC), SPTFY_M, FIGMA_M, MIRO_M, SGUI(KC_3), SGUI(KC_4),
+      KC_NO,   KC_NO,   MIRO_W,  FIGMA_W, SPTFY_W, G(KC_LSFT),                C(S(KC_SCLN)),SPTFY_M,FIGMA_M,MIRO_M,SGUI(KC_3),SGUI(KC_4),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_NO,   NOTEPD_W,NOTION_W,TELE_W,  CHROME_W,G(KC_DOT),               C(G(KC_SPC)),SAFARI_M,TELE_M,NOTION_M,TXTEDT_M,KC_NO,
+      G(KC_DOT),NOTEPD_W,NOTION_W,TELE_W, CHROME_W,FXPL_W,                      FNDR_M, SAFARI_M, TELE_M, NOTION_M,TXTEDT_M,C(G(KC_SPC)),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_NO,   MAIL_W,  WAPP_W,  MUSIC_W, PSHELL_W,G(KC_SPC),                     G(KC_SPC), TRMNL_M, MUSIC_M, WAPP_M,  MAIL_M,  KC_NO,
+      KC_NO,   MAIL_W,  WAPP_W,  MUSIC_W, PSHELL_W,G(KC_SPC),                   G(KC_SPC), TRMNL_M, MUSIC_M, WAPP_M,  MAIL_M,  KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_NO,   KC_NO,   KC_NO,       KC_NO, KC_NO, KC_NO
                                       //`--------------------------'  `--------------------------'
@@ -226,6 +228,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return true;
 
+    case FNDR_M:
+      if (record -> event.pressed) {
+        SEND_STRING(SS_LGUI(" ") SS_DELAY(MACRO_DELAY) "finde" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+      }
+      return true;
+
     // ● ---------- Windows Macros ---------- ●
     case CHROME_W:
       if (record -> event.pressed) {
@@ -290,6 +298,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case WAPP_W:  
       if (record -> event.pressed) {
         SEND_STRING(SS_TAP(X_LEFT_GUI) SS_DELAY(MACRO_DELAY) "whats" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
+      }
+      return true;
+
+    case FXPL_W:  
+      if (record -> event.pressed) {
+        SEND_STRING(SS_TAP(X_LEFT_GUI) SS_DELAY(MACRO_DELAY) "fil" SS_DELAY(MACRO_DELAY) SS_TAP(X_ENTER));
       }
       return true;
 
