@@ -55,11 +55,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // no programmer layer mod for alt. workaround: do in qwerty
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-LT(5, KC_GRV),   KC_X,   KC_L,    KC_D,   KC_P,    KC_V,                         KC_Z,    KC_K,  KC_O,    KC_U,    KC_SLSH, LT(5, KC_DEL),
+LT(5, KC_GRV),   KC_V,   KC_M,    KC_L,   KC_e,    KC_P,                         KC_X,    KC_F,  KC_O,    KC_U,    KC_J, LT(5, KC_DEL),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-LALT_T(KC_TAB),  KC_N,   KC_R,    KC_T,   KC_S,    KC_G,                         KC_Y,    KC_H,  KC_E,    KC_I,    KC_A,  G(KC_TAB),
+LALT_T(KC_TAB),  KC_S,   KC_T,    KC_R,   KC_D,    KC_Y,                         KC_DOT,  KC_N,  KC_A,    KC_E,    KC_I,     KC_SLSH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-LCTL_T(KC_CAPS), KC_Q,   KC_J,    KC_M,   KC_C,    KC_W,                         KC_B,    KC_F,  KC_QUOT, KC_COMM,  KC_DOT, DF(1),
+LCTL_T(KC_CAPS), KC_Z,   KC_K,    KC_Q,   KC_G,    KC_W,                         KC_B,    KC_H,  KC_QUOT, KC_SCLN,  KC_COMM, DF(1),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                        OSM(MOD_LSFT), LT(2, KC_BSPC), LT(3, KC_ESC),     LT(7, KC_ENT), LT(4, KC_SPC), LM(1, MOD_LGUI)
                                       //`--------------------------'  `--------------------------'
