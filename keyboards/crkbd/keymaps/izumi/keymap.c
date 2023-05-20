@@ -2,21 +2,24 @@
 #include <stdio.h>
 
 /*
-Izumi Layout v5.8
-Copyright 2019 @foostan
-Copyright 2020 Drashna Jaelre <@drashna>
-Copyright 2023 Ian Hong @ianfromdover
-
-Layer:
-0 base
-1 qwerty
-2 num
-3 code
-4 nav
-5 sys
-6 fps
-7 oneshot
-*/
+ * Izumi Layout v7.0
+ * 20 May 2023 4:19pm
+ * Copyright 2019 @foostan
+ * Copyright 2020 Drashna Jaelre <@drashna>
+ * Copyright 2023 Ian Hong @ianfromdover
+ *
+ * TODO: add programmer alphabet, just copy iz68
+ * 
+ * Layer:
+ * 0 base
+ * 1 qwerty
+ * 2 num
+ * 3 code
+ * 4 nav
+ * 5 system, functions
+ * 6 mouse
+ * 7 oneshot
+ */
 
 #define MACRO_DELAY 20
 
@@ -55,11 +58,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // no programmer layer mod for alt. workaround: do in qwerty
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-LT(5, KC_GRV),   KC_V,   KC_M,    KC_L,   KC_e,    KC_P,                         KC_X,    KC_F,  KC_O,    KC_U,    KC_J, LT(5, KC_DEL),
+LT(5, KC_GRV),   KC_B,   KC_L,    KC_D,   KC_C,    KC_V,                         KC_Z,    KC_Y,  KC_O,    KC_U,    KC_COMM, LT(5, KC_DEL),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-LALT_T(KC_TAB),  KC_S,   KC_T,    KC_R,   KC_D,    KC_Y,                         KC_DOT,  KC_N,  KC_A,    KC_E,    KC_I,     KC_SLSH,
+LALT_T(KC_TAB),  KC_N,   KC_R,    KC_T,   KC_S,    KC_G,                         KC_P,    KC_H,  KC_A,    KC_E,    KC_I,    KC_SLSH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-LCTL_T(KC_CAPS), KC_Z,   KC_K,    KC_Q,   KC_G,    KC_W,                         KC_B,    KC_H,  KC_QUOT, KC_SCLN,  KC_COMM, DF(1),
+LCTL_T(KC_CAPS), KC_Q,   KC_X,    KC_M,   KC_W,    KC_J,                         KC_K,    KC_F,  KC_QUOT, KC_SCLN,  KC_DOT, DF(1),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                        OSM(MOD_LSFT), LT(2, KC_BSPC), LT(3, KC_ESC),     LT(7, KC_ENT), LT(4, KC_SPC), LM(1, MOD_LGUI)
                                       //`--------------------------'  `--------------------------'
@@ -106,6 +109,7 @@ LCTL_T(KC_CAPS), KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,                       
 
   // ● ---------- NAV Layer ---------- ●
   // consider having windows nav layer, triggered by variable
+  // no, add home and end on the left
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                      KC_NO,   TG(6),G(KC_MINS), G(KC_EQL), G(KC_BSPC),KC_NO,
@@ -131,7 +135,7 @@ KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                     
                                       //`--------------------------'  `--------------------------'
   ),
 
-  // ● ---------- FPS Layer ---------- ●
+  // ● ---------- Mouse Layer ---------- ●
   [6] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        TG(6),   KC_WH_D, KC_MS_U, KC_WH_U, KC_5,    KC_6, 

@@ -1,20 +1,20 @@
 #include QMK_KEYBOARD_H
 
-/* Izumi68 Layout v1.0
- * 26 Mar 2022 1219am
+/* Izumi68 Layout v7.0
+ * 20 May 2023 4:19pm
  * Copyright 2023 Ian Hong @ianfromdover
  *
  * Note: karabiner makes sticky shift malfunction
  *
  * Layers:
- * 0 nerps, main
+ * 0 base
  * 1 qwerty
  * 2 num
  * 3 code
  * 4 nav
  * 5 system, functions
  * 6 mouse
- * 7 one shot
+ * 7 oneshot
  */
 
 #define MACRO_DELAY 20
@@ -50,12 +50,12 @@ enum custom_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    // ● ---------- Sturdy Layer ---------- ●
+    // ● ---------- Base Layer ---------- ●
     [0] = LAYOUT_65_ansi(
             QK_GESC,          KC_1,    KC_2,    KC_3,   KC_4,     KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,    DF(1), 
-            LT(2,KC_TAB),     KC_V,    KC_M,    KC_L,   KC_C,     KC_P,    KC_X,    KC_F,    KC_O,    KC_U,    KC_J, KC_LBRC, KC_RBRC, A(KC_BSPC), KC_DEL,
-            LT(3,KC_CAPS),    KC_S,    KC_T,    KC_R,   KC_D,     KC_Y,    KC_DOT,  KC_N,    KC_A,    KC_E,    KC_I,    KC_SLSH, KC_ENT,           G(KC_TAB), 
-            OSM(MOD_LSFT),    KC_K,    KC_Q,    KC_G,   KC_W,     KC_Z,    KC_B,    KC_H,    KC_QUOT, KC_SCLN,  KC_COMM, OSM(MOD_RSFT),    KC_UP,   G(KC_GRV),
+            LT(2,KC_TAB),     KC_B,    KC_L,    KC_D,   KC_C,     KC_V,    KC_Z,    KC_Y,    KC_O,    KC_U,    KC_COMM, KC_LBRC, KC_RBRC, A(KC_BSPC), KC_DEL,
+            LT(3,KC_CAPS),    KC_N,    KC_R,    KC_T,   KC_S,     KC_G,    KC_P,    KC_H,    KC_A,    KC_E,    KC_I,    KC_SLSH, KC_ENT,           G(KC_TAB), 
+            OSM(MOD_LSFT),    KC_Q,    KC_X,    KC_M,   KC_W,     KC_J,    KC_K,    KC_F,    KC_QUOT, KC_SCLN, KC_DOT,  OSM(MOD_RSFT),    KC_UP,   G(KC_GRV),
             LM(1,MOD_LCTL),   LM(1,MOD_LALT), LM(1,MOD_LGUI),     LT(4,KC_SPC),     LT(7,KC_BSLS),    LT(5,KC_GRV),     TG(6),   KC_LEFT, KC_DOWN, KC_RGHT
             ),
 
@@ -280,7 +280,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 bool rgb_matrix_indicators_user(void) {
     /**
      * Layers:
-     * 0 canary, main
+     * 0 base
      * 1 qwerty
      * 2 num
      * 3 code
@@ -436,7 +436,7 @@ bool rgb_matrix_indicators_user(void) {
             }
             break;
 
-        default: // on Canary layer, do matrix effect
+        default: // on Base layer, do matrix effect
             break;
     }
 
