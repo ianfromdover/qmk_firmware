@@ -112,7 +112,7 @@ LCTL_T(KC_CAPS), KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,                       
   // no, add home and end on the left
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                      KC_NO,   TG(6),G(KC_MINS), G(KC_EQL), G(KC_BSPC),KC_NO,
+      KC_NO, KC_HOME, KC_END, G(KC_LEFT), G(KC_RGHT), KC_NO,                     KC_NO,   TG(6),G(KC_MINS), G(KC_EQL), G(KC_BSPC),KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
    G(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, G(KC_RBRC),                     KC_NO,   KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, G(KC_ENT), 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -151,11 +151,11 @@ KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                     
   // ● ---------- One-Shot Layer ---------- ●
   [7] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_NO,   KC_NO,   MIRO_W,  FIGMA_W, SPTFY_W, G(KC_LSFT),                C(S(KC_SCLN)),SPTFY_M,FIGMA_M,MIRO_M,SGUI(KC_3),SGUI(KC_4),
+      KC_NO, G(S(KC_S)),  MIRO_W,  FIGMA_W, SPTFY_W, G(KC_LSFT),                C(S(KC_SCLN)),SPTFY_M,FIGMA_M,MIRO_M,SGUI(KC_3),SGUI(KC_4),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       G(KC_DOT),NOTEPD_W,NOTION_W,TELE_W, CHROME_W,FXPL_W,                      FNDR_M, SAFARI_M, TELE_M, NOTION_M,TXTEDT_M,C(G(KC_SPC)),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_NO,   MAIL_W,  WAPP_W,  MUSIC_W, PSHELL_W,G(KC_SPC),                   G(KC_SPC), TRMNL_M, MUSIC_M, WAPP_M,  MAIL_M,  KC_NO,
+      KC_NO,   MAIL_W,  WAPP_W,  MUSIC_W, PSHELL_W,KC_LGUI,                   G(KC_SPC), TRMNL_M, MUSIC_M, WAPP_M,  MAIL_M,  KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_NO,   KC_NO,   KC_NO,       KC_NO, KC_NO, KC_NO
                                       //`--------------------------'  `--------------------------'
