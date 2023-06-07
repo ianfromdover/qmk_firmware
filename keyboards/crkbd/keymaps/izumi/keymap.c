@@ -112,7 +112,7 @@ LCTL_T(KC_CAPS), KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,                       
   // no, add home and end on the left
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_NO, KC_HOME, KC_END, G(KC_LEFT), G(KC_RGHT), KC_NO,                     KC_NO,   TG(6),G(KC_MINS), G(KC_EQL), G(KC_BSPC),KC_NO,
+      KC_NO, A(KC_TAB), G(KC_TAB), KC_HOME, KC_END, KC_NO,                               KC_NO,   TG(6),G(KC_MINS), G(KC_EQL), G(KC_BSPC),KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
    G(KC_LBRC), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, G(KC_RBRC),                     KC_NO,   KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, G(KC_ENT), 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
