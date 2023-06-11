@@ -3,7 +3,7 @@
 
 /*
  * Izumi Layout v7.0
- * 20 May 2023 4:19pm
+ * 11 June 2023 4:19pm
  * Copyright 2019 @foostan
  * Copyright 2020 Drashna Jaelre <@drashna>
  * Copyright 2023 Ian Hong @ianfromdover
@@ -64,7 +64,7 @@ LALT_T(KC_TAB),  KC_N,   KC_R,    KC_T,   KC_S,    KC_G,                        
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 LCTL_T(KC_CAPS), KC_Q,   KC_X,    KC_M,   KC_W,    KC_J,                         KC_K,    KC_F,  KC_QUOT, KC_SCLN,  KC_DOT, DF(1),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                       OSM(MOD_LSFT), LT(2, KC_BSPC), LT(3, KC_ESC),     LT(7, KC_ENT), LT(4, KC_SPC), LM(1, MOD_LGUI)
+                       LM(1, MOD_LGUI), LT(2, KC_BSPC), LT(3, KC_ESC),     LT(7, KC_ENT), LT(4, KC_SPC), OSM(MOD_LSFT)
                                       //`--------------------------'  `--------------------------'
   ),
 
